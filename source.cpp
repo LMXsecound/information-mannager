@@ -1,3 +1,4 @@
+#include <conio.h>
 #include <iostream>
 #include <string>
 
@@ -8,20 +9,21 @@ enum {EXIT = 0, ADD = 1, SHOW = 2, DEL = 3, \
 SRCH = 4, MODI = 5, CLR = 6};
 
 void pause() {
+	cout << "»¶Ó­ÏÂ´ÎÊ¹ÓÃ£¡" << endl;
 	printf("Press any key to exit...");
-	getchar();
+	_getch();
 }
 
 void showMenu()
 {
 	cout << "***************************" << endl;
-	cout << "*****  1ã€æ·»åŠ è”ç³»äºº  *****" << endl;
-	cout << "*****  2ã€æ˜¾ç¤ºè”ç³»äºº  *****" << endl;
-	cout << "*****  3ã€åˆ é™¤è”ç³»äºº  *****" << endl;
-	cout << "*****  4ã€æŸ¥æ‰¾è”ç³»äºº  *****" << endl;
-	cout << "*****  5ã€ä¿®æ”¹è”ç³»äºº  *****" << endl;
-	cout << "*****  6ã€æ¸…ç©ºè”ç³»äºº  *****" << endl;
-	cout << "*****  0ã€é€€å‡ºé€šè®¯å½•  *****" << endl;
+	cout << "*****  1¡¢Ìí¼ÓÁªÏµÈË  *****" << endl;
+	cout << "*****  2¡¢ÏÔÊ¾ÁªÏµÈË  *****" << endl;
+	cout << "*****  3¡¢É¾³ıÁªÏµÈË  *****" << endl;
+	cout << "*****  4¡¢²éÕÒÁªÏµÈË  *****" << endl;
+	cout << "*****  5¡¢ĞŞ¸ÄÁªÏµÈË  *****" << endl;
+	cout << "*****  6¡¢Çå¿ÕÁªÏµÈË  *****" << endl;
+	cout << "*****  0¡¢ÍË³öÍ¨Ñ¶Â¼  *****" << endl;
 	cout << "***************************" << endl;
 
 }
@@ -29,23 +31,24 @@ void showMenu()
 struct Person
 {
 	bool m_Sex; // 0->male, 1->female
-	int m_Age; // å¹´é¾„
-	string m_Name; // å§“å
-	string m_Phone; // ç”µè¯
-	string m_Addr; // ä½å€
+	int m_Age; // ÄêÁä
+	string m_Name; // Ãû×Ö
+	string m_Phone; // µç»°
+	string m_Addr; // µØÖ·
 };
 
 struct Addressbooks
 {
-	Person personArray[MAX]; // é€šè®¯å½•ä¸­ä¿å­˜çš„è”ç³»äººæ•°ç»„
-	int m_Size; // é€šè®¯å½•ä¸­äººå‘˜ä¸ªæ•°
+	Person personArray[MAX]; // Í¨Ñ¶Â¼ÖĞ±£´æµÄÁªÏµÈËÊı×é
+	int m_Size; // Í¨Ñ¶Â¼ÖĞÈËÔ±¸öÊı
 };
 
 int main()
 {
 	int select = 0;
+	bool loopSitu = true;
 
-	while (true)
+	while (loopSitu)
 	{
 		showMenu();
 
@@ -72,14 +75,13 @@ int main()
 			break;
 
 		case EXIT:
-			cout << "ï¿½ï¿½Ó­ï¿½Â´ï¿½Ê¹ï¿½ï¿½" << endl;
-			system("pause");
-			return 0;
+			loopSitu = false;
 			break;
 
 		default:
 			break;
 		}
+		system("cls");
 	}
 
 	pause();
