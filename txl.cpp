@@ -36,7 +36,7 @@ class AddressBooks {
 private:
     int m_size;
     //priority_queue< Person*, vector<Person*>, greater<Person*> > pq;
-    static map<string, Person*> list;
+    map<string, Person*> list;
     Person *head;
     Person *cur;
 
@@ -118,8 +118,7 @@ void showMenu() {
 }
 
 int main() {
-    showMenu();
-    string choice = "";
+    int choice;
     bool loopSitu = true;
     AddressBooks book;
 
@@ -134,11 +133,12 @@ int main() {
 
     while (loopSitu) {
         showMenu();
-        getline(cin, choice);
+        cin >> choice;
+        getchar();
 
-        switch (choice[0] - '0') {
+        switch (choice) {
         case ADD:
-            system("clear");
+            system("cls");
             cout << "name : ";
             getline(cin, name);
             cout << "phone: ";
@@ -155,38 +155,45 @@ int main() {
             }
             cout << "age   :";
             cin >> age;
-            current = &Person(sex, age, name, phone, addr);
+            current = new Person(sex, age, name, phone, addr);
             book.addPerson(*current);
-            system("clear");
+            system("cls");
             break;
         
         case EXIT:
-            system("clear");
+            system("cls");
             cout << "Good Bye! " << endl;
             book.clrPerson();
+            loopSitu = false;
             system("pause");
-            system("clear");
+            system("cls");
             break;
         
         case SHOW:
-            system("clear");
+            system("cls");
             book.displayPerson();
             break;
         
         case MODI:
-            system("clear");
+            system("cls");
             cout << "Input the name: ";
             getline(cin, name);
             temp = name;
             current = book.srchPerson(name);
+            if (current == nullptr) {
+                cout << "Not exist!" << endl;
+                system("pause");
+                system("cls");
+                break;
+            }
             cout << *current;
             cout << "name : ";
             getline(cin, name);
             cout << "phone: ";
             getline(cin, phone);
-            cout << "addr :";
+            cout << "addr : ";
             getline(cin, addr);
-            cout << "sex [M/F] :";
+            cout << "sex [M/F] : ";
             getline(cin, _sex);
             if (_sex[0] == 'F') sex = false;
             else if (_sex[0] == 'M') sex = true;
@@ -196,31 +203,51 @@ int main() {
             }
             cout << "age   :";
             cin >> age;
-            current = &Person(sex, age, name, phone, addr);
+            current = new Person(sex, age, name, phone, addr);
             book.modPerson(temp, current);
             cout << "Mod success!" << endl;
             system("pause");
-            system("clear");
+            system("cls");
             break;
 
         case DEL:
+            system("cls");
+            cout << "name: ";
+            getline(cin, name);
+            current = book.srchPerson(name);
+            if (current == nullptr) cout << "Not exist." << endl;
+            else book.remPerson(name);
+            system("pause");
+            system("cls");
+            break;
+
+        case SRCH:
+            system("cls");
+            cout << "name :";
+            getline(cin, name);
+            current = book.srchPerson(name);
+            if (current == nullptr) cout << "Not exist." << endl;
+            else cout << *current << endl;
+            system("pause");
+            system("cls");
             break;
 
 
 
         case CLR:
-            system("clear");
-            cout << "Are you sure?[y/n]";
-            getline(cin, name);
-            if (name[0] == 'y') book.clrPerson();
-            system("clear");
+            system("cls");
+            cout << "Are you sure?[y/n]" << endl;
+            cin >> name;
+            if (name == "y") book.clrPerson();
+            system("cls");
             break;
 
         default:
-            system("clear");
+            system("cls");
             cout << "Operation not include" << endl;
             system("pause");
-            system("clear");
+            system("cls");
+            break;
         }
     }
     /*
