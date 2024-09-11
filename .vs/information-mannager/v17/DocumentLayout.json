@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Dandelion\\Desktop\\information-mannager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dandelion\\Desktop\\information-mannager\\\u6E901.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:\u6E901.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dandelion\\Desktop\\information-mannager\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,13 +23,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "\u6E901.cpp",
-              "DocumentMoniker": "C:\\Users\\Dandelion\\Desktop\\information-mannager\\\u6E901.cpp",
-              "RelativeDocumentMoniker": "\u6E901.cpp",
-              "ToolTip": "C:\\Users\\Dandelion\\Desktop\\information-mannager\\\u6E901.cpp",
-              "RelativeToolTip": "\u6E901.cpp",
+              "Title": "source.cpp",
+              "DocumentMoniker": "C:\\Users\\Dandelion\\Desktop\\information-mannager\\source.cpp",
+              "RelativeDocumentMoniker": "source.cpp",
+              "ToolTip": "C:\\Users\\Dandelion\\Desktop\\information-mannager\\source.cpp",
+              "RelativeToolTip": "source.cpp",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-10T14:17:44.259Z"
+              "WhenOpened": "2024-09-11T14:14:54.557Z",
+              "EditorCaption": ""
             }
           ]
         }
