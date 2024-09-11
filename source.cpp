@@ -5,8 +5,7 @@
 using namespace std;
 
 constexpr const int MAX = 1000;
-enum {EXIT = 0, ADD = 1, SHOW = 2, DEL = 3, \
-SRCH = 4, MODI = 5, CLR = 6};
+enum {EXIT = 0, ADD = 1, SHOW = 2, DEL = 3, SRCH = 4, MODI = 5, CLR = 6};
 
 void pause() {
 	cout << "欢迎下次使用！" << endl;
