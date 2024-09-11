@@ -8,7 +8,7 @@ constexpr const int MAX = 1000;
 enum {EXIT = 0, ADD = 1, SHOW = 2, DEL = 3, SRCH = 4, MODI = 5, CLR = 6};
 
 void pause() {
-	cout << "»¶Ó­ÏÂ´ÎÊ¹ÓÃ£¡" << endl;
+	cout << "ï¿½ï¿½Ó­ï¿½Â´ï¿½Ê¹ï¿½Ã£ï¿½" << endl;
 	printf("Press any key to exit...");
 	_getch();
 }
@@ -16,13 +16,13 @@ void pause() {
 void showMenu()
 {
 	cout << "***************************" << endl;
-	cout << "*****  1¡¢Ìí¼ÓÁªÏµÈË  *****" << endl;
-	cout << "*****  2¡¢ÏÔÊ¾ÁªÏµÈË  *****" << endl;
-	cout << "*****  3¡¢É¾³ıÁªÏµÈË  *****" << endl;
-	cout << "*****  4¡¢²éÕÒÁªÏµÈË  *****" << endl;
-	cout << "*****  5¡¢ĞŞ¸ÄÁªÏµÈË  *****" << endl;
-	cout << "*****  6¡¢Çå¿ÕÁªÏµÈË  *****" << endl;
-	cout << "*****  0¡¢ÍË³öÍ¨Ñ¶Â¼  *****" << endl;
+	cout << "*****  1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½  *****" << endl;
+	cout << "*****  2ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ïµï¿½ï¿½  *****" << endl;
+	cout << "*****  3ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½  *****" << endl;
+	cout << "*****  4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½  *****" << endl;
+	cout << "*****  5ï¿½ï¿½ï¿½Ş¸ï¿½ï¿½ï¿½Ïµï¿½ï¿½  *****" << endl;
+	cout << "*****  6ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½  *****" << endl;
+	cout << "*****  0ï¿½ï¿½ï¿½Ë³ï¿½Í¨Ñ¶Â¼  *****" << endl;
 	cout << "***************************" << endl;
 
 }
@@ -30,23 +30,26 @@ void showMenu()
 struct Person
 {
 	bool m_Sex; // 0->male, 1->female
-	int m_Age; // ÄêÁä
-	string m_Name; // Ãû×Ö
-	string m_Phone; // µç»°
-	string m_Addr; // µØÖ·
+	int m_Age; // ï¿½ï¿½ï¿½ï¿½
+	string m_Name; // ï¿½ï¿½ï¿½ï¿½
+	string m_Phone; // ï¿½ç»°
+	string m_Addr; // ï¿½ï¿½Ö·
 };
 
 struct Addressbooks
 {
-	Person personArray[MAX]; // Í¨Ñ¶Â¼ÖĞ±£´æµÄÁªÏµÈËÊı×é
-	int m_Size; // Í¨Ñ¶Â¼ÖĞÈËÔ±¸öÊı
+	Person personArray[MAX]; // Í¨Ñ¶Â¼ï¿½Ğ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int m_Size; // Í¨Ñ¶Â¼ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½
 };
 
 int main()
 {
 	int select = 0;
 	bool loopSitu = true;
-
+    //åˆ›å»ºé€šè®¯å½•
+	Addressbooks abs;
+	//åˆå§‹åŒ–é€šè®¯å½•ä¸­äººæ•°
+	abs.m_Size = 0;
 	while (loopSitu)
 	{
 		showMenu();
