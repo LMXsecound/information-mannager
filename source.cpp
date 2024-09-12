@@ -5,7 +5,7 @@
 using namespace std;
 
 constexpr const int MAX = 1000;
-enum {EXIT = 0, ADD = 1, SHOW = 2, DEL = 3, SRCH = 4, MODI = 5, CLR = 6};
+enum { EXIT = 0, ADD = 1, SHOW = 2, DEL = 3, SRCH = 4, MODI = 5, CLR = 6 };
 
 void pause() {
 	cout << "��ӭ�´�ʹ�ã�" << endl;
@@ -29,7 +29,7 @@ void showMenu()
 
 struct Person
 {
-	bool m_Sex; // 0->male, 1->female
+	bool m_Sex; // 1->male, 2->female
 	int m_Age; //年龄
 	string m_Name; //姓名
 	string m_Phone; //电话
@@ -42,16 +42,18 @@ struct Addressbooks
 	int m_Size; //通讯录中人员个数
 };
 
-void addPerson(Addressbooks &abs)
+void addPerson(Addressbooks& abs)
 {
 	//判断电话本是否满了
 	if (abs.m_Size == MAX)
 	{
 		cout << "通讯录已满，无法添加" << endl;
+
 		return;
 	}
 	else
 	{
+
 		//姓名
 		string name;
 		cout << "请输入姓名：" << endl;
@@ -59,8 +61,8 @@ void addPerson(Addressbooks &abs)
 		abs.personArray[abs.m_Size].m_Name = name;
 
 		cout << "请输入性别：" << endl;
-		cout << "0 -- 男" << endl;
-		cout << "1 -- 女" << endl;
+		cout << "1 -- 男" << endl;
+		cout << "2 -- 女" << endl;
 
 		//性别
 		int sex = 0;
@@ -94,14 +96,15 @@ void addPerson(Addressbooks &abs)
 		abs.personArray[abs.m_Size].m_Addr = address;
 
 		//更新通讯录人数
-		/*abs->m_Size++;*/
+		abs.m_Size++;
 
 		cout << "添加成功" << endl;
 		system("pause");
 		system("cls");
 	}
 }
-void showPerson(Addressbooks &abs)
+
+void showPerson(Addressbooks& abs)
 {
 	if (abs.m_Size == 0)
 	{
@@ -123,11 +126,49 @@ void showPerson(Addressbooks &abs)
 	system("cls");
 
 }
+
+int isExist(Addressbooks& abs, string name)
+{
+	for (int i = 0; i < abs.m_Size; i++)
+	{
+		if (abs.personArray[i].m_Name == name)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+void deletePerson(Addressbooks& abs)
+{
+	cout << "请输入您要删除的联系人" << endl;
+	string name;
+	cin >> name;
+
+	int ret = isExist(abs, name);
+	if (ret != -1)
+	{
+		for (int i = ret; i < abs.m_Size; i++)
+		{
+			abs.personArray[i] = abs.personArray[i + 1];
+		}
+		abs.m_Size--;
+		cout << "删除成功" << endl;
+	}
+	else
+	{
+		cout << "查无此人" << endl;
+	}
+
+	system("pause");
+	system("cls");
+}
+
 int main()
 {
 	int select = 0;
 	bool loopSitu = true;
-    //创建通讯录
+	//创建通讯录
 	Addressbooks abs;
 	//初始化通讯录中人数
 	abs.m_Size = 0;
@@ -148,6 +189,7 @@ int main()
 			break;
 
 		case DEL:
+			deletePerson(abs);
 			break;
 
 		case SRCH:
