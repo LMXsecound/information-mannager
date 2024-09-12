@@ -42,6 +42,11 @@ struct Addressbooks
 	int m_Size; //通讯录中人员个数
 };
 
+void clrPerson(Addressbooks& abs)
+{
+	abs.m_Size = 0;
+}
+
 void addPerson(Addressbooks& abs)
 {
 	//判断电话本是否满了
