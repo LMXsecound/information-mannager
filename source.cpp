@@ -163,7 +163,91 @@ void deletePerson(Addressbooks& abs)
 	system("pause");
 	system("cls");
 }
+void findPerson(Addressbooks &abs)
+{
+	cout << "请输入您要查找的联系人" << endl;
+	string name;
+	cin >> name;
 
+	int ret = isExist(abs, name);
+	if (ret != -1)
+	{
+		cout << "姓名：" << abs.personArray[ret].m_Name << "\t";
+		cout << "性别：" << abs.personArray[ret].m_Sex << "\t";
+		cout << "年龄：" << abs.personArray[ret].m_Age << "\t";
+		cout << "电话：" << abs.personArray[ret].m_Phone << "\t";
+		cout << "住址：" << abs.personArray[ret].m_Addr << endl;
+	}
+	else
+	{
+		cout << "查无此人" << endl;
+	}
+
+	system("pause");
+	system("cls");
+
+}
+void modifyPerson(Addressbooks &abs)
+{
+	cout << "请输入您要修改的联系人" << endl;
+	string name;
+	cin >> name;
+
+	int ret = isExist(abs, name);
+	if (ret != -1)
+	{
+		//姓名
+		string name;
+		cout << "请输入姓名：" << endl;
+		cin >> name;
+		abs.personArray[ret].m_Name = name;
+
+		cout << "请输入性别：" << endl;
+		cout << "1 -- 男" << endl;
+		cout << "2 -- 女" << endl;
+
+		//性别
+		int sex = 0;
+		while (true)
+		{
+			cin >> sex;
+			if (sex == 1 || sex == 2)
+			{
+				abs.personArray[ret].m_Sex = sex;
+				break;
+			}
+			cout << "输入有误，请重新输入";
+		}
+
+		//年龄
+		cout << "请输入年龄：" << endl;
+		int age = 0;
+		cin >> age;
+		abs.personArray[ret].m_Age = age;
+
+		//联系电话
+		cout << "请输入联系电话：" << endl;
+		string phone = "";
+		cin >> phone;
+		abs.personArray[ret].m_Phone = phone;
+
+		//家庭住址
+		cout << "请输入家庭住址：" << endl;
+		string address;
+		cin >> address;
+		abs.personArray[ret].m_Addr = address;
+
+		cout << "修改成功" << endl;
+	}
+	else
+	{
+		cout << "查无此人" << endl;
+	}
+
+	system("pause");
+	system("cls");
+
+}
 int main()
 {
 	int select = 0;
@@ -193,6 +277,7 @@ int main()
 			break;
 
 		case SRCH:
+			findPerson(abs);
 			break;
 
 		case MODI:
