@@ -189,6 +189,7 @@ int main()
 			break;
 
 		case DEL:
+			deletePerson(abs);
 			break;
 
 		case SRCH:
