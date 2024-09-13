@@ -8,7 +8,7 @@ constexpr const int MAX = 1000;
 enum { EXIT = 0, ADD = 1, SHOW = 2, DEL = 3, SRCH = 4, MODI = 5, CLR = 6 };
 
 void pause() {
-	cout << "��ӭ�´�ʹ�ã�" << endl;
+	cout << "已退出" << endl;
 	printf("Press any key to exit...");
 	_getch();
 }
