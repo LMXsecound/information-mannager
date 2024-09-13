@@ -45,8 +45,10 @@ struct Addressbooks
 void clrPerson(Addressbooks& abs)
 {
 	abs.m_Size = 0;
+	cout << "已清空" << endl;
+	system("pause");
+	system("cls");
 }
-
 void addPerson(Addressbooks& abs)
 {
 	//判断电话本是否满了
@@ -168,7 +170,7 @@ void deletePerson(Addressbooks& abs)
 	system("pause");
 	system("cls");
 }
-void findPerson(Addressbooks &abs)
+void findPerson(Addressbooks& abs)
 {
 	cout << "请输入您要查找的联系人" << endl;
 	string name;
@@ -192,7 +194,7 @@ void findPerson(Addressbooks &abs)
 	system("cls");
 
 }
-void modifyPerson(Addressbooks &abs)
+void modifyPerson(Addressbooks& abs)
 {
 	cout << "请输入您要修改的联系人" << endl;
 	string name;
@@ -286,9 +288,11 @@ int main()
 			break;
 
 		case MODI:
+			modifyPerson(abs);
 			break;
 
 		case CLR:
+			clrPerson(abs);
 			break;
 
 		case EXIT:
